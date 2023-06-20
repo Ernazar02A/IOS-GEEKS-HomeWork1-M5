@@ -1,0 +1,6 @@
+framework module Pods_IOS_GEEKS_HomeWork1_M5 {
+  umbrella header "Pods-IOS-GEEKS-HomeWork1-M5-umbrella.h"
+
+  export *
+  module * { export * }
+}
