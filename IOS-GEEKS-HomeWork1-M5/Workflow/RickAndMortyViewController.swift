@@ -44,21 +44,17 @@ class RickAndMortyViewController: UIViewController {
     }
 
     private func fetchCharacters() {
-        networkService.fetchCharacters { [weak self] result in
-            guard let self else {
-                return
-            }
-            switch result {
-            case .success(let model):
+        
+        Task {
+            do {
+                characters = try await networkService.fetchCharacters()
                 DispatchQueue.main.async {
-                    self.characters = model
                     self.collectionView.reloadData()
                 }
-            case .failure(let error):
+            } catch {
                 print(error.localizedDescription)
             }
         }
-        
     }
 }
 
