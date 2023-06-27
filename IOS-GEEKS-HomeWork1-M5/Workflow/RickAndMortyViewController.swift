@@ -30,7 +30,7 @@ class RickAndMortyViewController: UIViewController {
         return view
     }()
 
-    private let networkService = NetworkService()
+    private let rickAndMortyViewModel = RickAndMortyViewModel()
     private var characters: [Character] = []
 
     override func viewDidLoad() {
@@ -38,16 +38,16 @@ class RickAndMortyViewController: UIViewController {
         setup()
         fetchCharacters()
     }
+    
     private func setup() {
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
 
     private func fetchCharacters() {
-        
         Task {
             do {
-                characters = try await networkService.fetchCharacters()
+                characters = try await rickAndMortyViewModel.fetchCharacters()
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }

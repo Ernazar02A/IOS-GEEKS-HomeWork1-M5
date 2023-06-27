@@ -39,6 +39,7 @@ class CharacterInfoViewController: UIViewController {
         view.font = .systemFont(ofSize: 30, weight: .medium)
         return view
     }()
+    
     private lazy var typeLabel: UILabel = {
         let view = UILabel()
         view.textColor = .white
@@ -60,13 +61,8 @@ class CharacterInfoViewController: UIViewController {
     private func setup() {
         view.addSubview(characterImage)
         characterImage.snp.makeConstraints { make in
-            make
-                .top
-                .equalToSuperview().offset(150)
-            make
-                .horizontalEdges
-                .equalToSuperview()
-                .inset(20)
+            make.top.equalToSuperview().offset(150)
+            make.horizontalEdges.equalToSuperview().inset(20)
         }
         updateInfo()
         view.addSubview(nameLabel)
@@ -99,6 +95,5 @@ class CharacterInfoViewController: UIViewController {
             typeLabel.text = "Character type is a \(character.type)"
         }
     }
-    
 
 }

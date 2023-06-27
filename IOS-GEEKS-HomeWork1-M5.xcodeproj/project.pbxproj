@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		523B40532A4AAA5100585929 /* RickAndMortyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523B40522A4AAA5100585929 /* RickAndMortyViewModel.swift */; };
 		52E6D2A22A3DDDEB004CF566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D2A12A3DDDEB004CF566 /* AppDelegate.swift */; };
 		52E6D2A42A3DDDEB004CF566 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D2A32A3DDDEB004CF566 /* SceneDelegate.swift */; };
 		52E6D2A62A3DDDEB004CF566 /* RickAndMortyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D2A52A3DDDEB004CF566 /* RickAndMortyViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		16EBA9D7718976E5CFA138A9 /* Pods-IOS-GEEKS-HomeWork1-M5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-GEEKS-HomeWork1-M5.release.xcconfig"; path = "Target Support Files/Pods-IOS-GEEKS-HomeWork1-M5/Pods-IOS-GEEKS-HomeWork1-M5.release.xcconfig"; sourceTree = "<group>"; };
 		4D94B2AF25BD0FFD24B34D1A /* Pods_IOS_GEEKS_HomeWork1_M5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_GEEKS_HomeWork1_M5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		523B40522A4AAA5100585929 /* RickAndMortyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyViewModel.swift; sourceTree = "<group>"; };
 		52E6D29E2A3DDDEB004CF566 /* IOS-GEEKS-HomeWork1-M5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-GEEKS-HomeWork1-M5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E6D2A12A3DDDEB004CF566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E6D2A32A3DDDEB004CF566 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +54,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		523B404E2A49FA9200585929 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52E6D2D52A40D204004CF566 /* CustomCharacterTableCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		523B40512A4AA9D600585929 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				523B40522A4AAA5100585929 /* RickAndMortyViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		52E6D2952A3DDDEA004CF566 = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +93,9 @@
 			children = (
 				52E6D2CC2A408856004CF566 /* App */,
 				52E6D2B72A3DDF98004CF566 /* Model */,
+				523B40512A4AA9D600585929 /* ViewModel */,
 				52E6D2B82A3DDFA1004CF566 /* Workflow */,
+				523B404E2A49FA9200585929 /* View */,
 				52E6D2B52A3DDF07004CF566 /* Resourse */,
 			);
 			path = "IOS-GEEKS-HomeWork1-M5";
@@ -105,7 +125,6 @@
 		52E6D2B82A3DDFA1004CF566 /* Workflow */ = {
 			isa = PBXGroup;
 			children = (
-				52E6D2D52A40D204004CF566 /* Components */,
 				52E6D2A52A3DDDEB004CF566 /* RickAndMortyViewController.swift */,
 				52E6D2D82A418029004CF566 /* CharacterInfoViewController.swift */,
 			);
@@ -137,12 +156,12 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		52E6D2D52A40D204004CF566 /* Components */ = {
+		52E6D2D52A40D204004CF566 /* CustomCharacterTableCell */ = {
 			isa = PBXGroup;
 			children = (
 				52E6D2D62A40D2AF004CF566 /* CharacterCollectionViewCell.swift */,
 			);
-			path = Components;
+			path = CustomCharacterTableCell;
 			sourceTree = "<group>";
 		};
 		52E6D2DC2A41BB67004CF566 /* Extention */ = {
@@ -287,6 +306,7 @@
 				52E6D2A62A3DDDEB004CF566 /* RickAndMortyViewController.swift in Sources */,
 				52E6D2DB2A41BB61004CF566 /* String + Extention.swift in Sources */,
 				52E6D2A22A3DDDEB004CF566 /* AppDelegate.swift in Sources */,
+				523B40532A4AAA5100585929 /* RickAndMortyViewModel.swift in Sources */,
 				52E6D2D12A40C449004CF566 /* Character.swift in Sources */,
 				52E6D2CE2A408C45004CF566 /* NetworkService.swift in Sources */,
 				52E6D2D92A418029004CF566 /* CharacterInfoViewController.swift in Sources */,
