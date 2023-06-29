@@ -32,11 +32,78 @@ class RickAndMortyViewController: UIViewController {
 
     private let rickAndMortyViewModel = RickAndMortyViewModel()
     private var characters: [Character] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         fetchCharacters()
+        
+        //keychainSave(service: "E", account: "Era", password: "2")
+        //keychainGetPassword(service: "E", account: "Era")
+        //keychainUpdatePassword(service: "E", account: "Era", password: "3")
+        //keychainRemove(service: "E", account: "Era")
+    }
+    
+    
+    func userDefaultSaveAndGet() {
+        print(UserDefaultStorage.shared.retrieveString(type: .string, key: .temporarykey)!)
+        UserDefaultStorage.shared.save(data: "White", key: .temporarykey)
+        print(UserDefaultStorage.shared.retrieveString(type: .string, key: .temporarykey)!)
+        UserDefaultStorage.shared.save(data: "Black", key: .temporarykey)
+    }
+    
+    
+    func keychainSave(
+        service: String,
+        account: String,
+        password: String
+    ) {
+        do {
+            try KeychainStorage.shared.save(service: service,
+                                     account: account,
+                                     password: password.data(using: .utf8) ?? Data()
+            )
+        } catch {
+            print(error)
+        }
+    }
+    
+    func keychainUpdatePassword(
+        service: String,
+        account: String,
+        password: String
+    ) {
+        do {
+            try KeychainStorage.shared.update(service: service,
+                                     account: account,
+                                     password: password.data(using: .utf8) ?? Data()
+            )
+        } catch {
+            print(error)
+        }
+    }
+    
+    func keychainGetPassword(service: String, account: String) {
+        guard let data = KeychainStorage.shared.get(
+            service: service,
+            account: account
+        ) else {
+            print("Не удалось получить пароль")
+            return
+        }
+        let password = String(decoding: data, as: UTF8.self)
+        print(password)
+    }
+    
+    func keychainRemove(service: String, account: String) {
+        do {
+            try KeychainStorage.shared.delete(
+                service: service,
+                account: account
+            )
+        } catch {
+            print(error)
+        }
     }
     
     private func setup() {

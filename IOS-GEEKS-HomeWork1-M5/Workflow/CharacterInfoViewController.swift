@@ -53,7 +53,7 @@ class CharacterInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .black
         setup()
         updateInfo()
     }
@@ -95,5 +95,4 @@ class CharacterInfoViewController: UIViewController {
             typeLabel.text = "Character type is a \(character.type)"
         }
     }
-
 }
