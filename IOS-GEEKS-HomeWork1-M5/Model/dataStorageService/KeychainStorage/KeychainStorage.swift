@@ -16,9 +16,7 @@ class KeychainStorage {
     }
     
     static let shared = KeychainStorage()
-    
-    static let keychain = KeychainStorage()
-    
+
     func save(
         service: String,
         account: String,
