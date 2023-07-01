@@ -10,7 +10,8 @@
 		523B40532A4AAA5100585929 /* RickAndMortyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523B40522A4AAA5100585929 /* RickAndMortyViewModel.swift */; };
 		52C65DCC2A4CBD440038FD60 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C65DCB2A4CBD440038FD60 /* UserDefaultStorage.swift */; };
 		52C65DD12A4D7E0F0038FD60 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C65DD02A4D7E0F0038FD60 /* KeychainStorage.swift */; };
-		52C65DD42A4DD6520038FD60 /* KeychainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C65DD32A4DD6520038FD60 /* KeychainViewModel.swift */; };
+		52C65DDA2A4EEF380038FD60 /* MakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C65DD92A4EEF380038FD60 /* MakeView.swift */; };
+		52C65DDC2A50600C0038FD60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52C65DDB2A50600C0038FD60 /* GoogleService-Info.plist */; };
 		52E6D2A22A3DDDEB004CF566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D2A12A3DDDEB004CF566 /* AppDelegate.swift */; };
 		52E6D2A42A3DDDEB004CF566 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D2A32A3DDDEB004CF566 /* SceneDelegate.swift */; };
 		52E6D2A62A3DDDEB004CF566 /* RickAndMortyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D2A52A3DDDEB004CF566 /* RickAndMortyViewController.swift */; };
@@ -31,7 +32,8 @@
 		523B40522A4AAA5100585929 /* RickAndMortyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyViewModel.swift; sourceTree = "<group>"; };
 		52C65DCB2A4CBD440038FD60 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		52C65DD02A4D7E0F0038FD60 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
-		52C65DD32A4DD6520038FD60 /* KeychainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainViewModel.swift; sourceTree = "<group>"; };
+		52C65DD92A4EEF380038FD60 /* MakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeView.swift; sourceTree = "<group>"; };
+		52C65DDB2A50600C0038FD60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52E6D29E2A3DDDEB004CF566 /* IOS-GEEKS-HomeWork1-M5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-GEEKS-HomeWork1-M5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E6D2A12A3DDDEB004CF566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E6D2A32A3DDDEB004CF566 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +73,6 @@
 		523B40512A4AA9D600585929 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				52C65DD22A4DD5F00038FD60 /* StorageViewModel */,
 				523B40522A4AAA5100585929 /* RickAndMortyViewModel.swift */,
 			);
 			path = ViewModel;
@@ -102,12 +103,12 @@
 			path = KeychainStorage;
 			sourceTree = "<group>";
 		};
-		52C65DD22A4DD5F00038FD60 /* StorageViewModel */ = {
+		52C65DD82A4EEF150038FD60 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				52C65DD32A4DD6520038FD60 /* KeychainViewModel.swift */,
+				52C65DD92A4EEF380038FD60 /* MakeView.swift */,
 			);
-			path = StorageViewModel;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		52E6D2952A3DDDEA004CF566 = {
@@ -147,6 +148,7 @@
 				52E6D2AA2A3DDDEE004CF566 /* Assets.xcassets */,
 				52E6D2AC2A3DDDEE004CF566 /* LaunchScreen.storyboard */,
 				52E6D2AF2A3DDDEE004CF566 /* Info.plist */,
+				52C65DDB2A50600C0038FD60 /* GoogleService-Info.plist */,
 			);
 			path = Resourse;
 			sourceTree = "<group>";
@@ -154,6 +156,7 @@
 		52E6D2B72A3DDF98004CF566 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52C65DD82A4EEF150038FD60 /* Helper */,
 				52C65DCD2A4D7D580038FD60 /* dataStorageService */,
 				52E6D2DC2A41BB67004CF566 /* Extention */,
 				52E6D2D22A40C46E004CF566 /* Constants */,
@@ -292,6 +295,7 @@
 			files = (
 				52E6D2AE2A3DDDEE004CF566 /* LaunchScreen.storyboard in Resources */,
 				52E6D2AB2A3DDDEE004CF566 /* Assets.xcassets in Resources */,
+				52C65DDC2A50600C0038FD60 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,10 +348,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52C65DD42A4DD6520038FD60 /* KeychainViewModel.swift in Sources */,
 				52E6D2A62A3DDDEB004CF566 /* RickAndMortyViewController.swift in Sources */,
 				52E6D2DB2A41BB61004CF566 /* String + Extention.swift in Sources */,
 				52E6D2A22A3DDDEB004CF566 /* AppDelegate.swift in Sources */,
+				52C65DDA2A4EEF380038FD60 /* MakeView.swift in Sources */,
 				52C65DCC2A4CBD440038FD60 /* UserDefaultStorage.swift in Sources */,
 				523B40532A4AAA5100585929 /* RickAndMortyViewModel.swift in Sources */,
 				52C65DD12A4D7E0F0038FD60 /* KeychainStorage.swift in Sources */,

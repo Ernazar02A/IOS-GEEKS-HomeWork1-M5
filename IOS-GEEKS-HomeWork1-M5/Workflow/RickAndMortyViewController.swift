@@ -32,8 +32,7 @@ class RickAndMortyViewController: UIViewController {
 
     private let rickAndMortyViewModel = RickAndMortyViewModel()
     private var characters: [Character] = []
-    
-    private var keychainStorage = KeychainViewModel()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

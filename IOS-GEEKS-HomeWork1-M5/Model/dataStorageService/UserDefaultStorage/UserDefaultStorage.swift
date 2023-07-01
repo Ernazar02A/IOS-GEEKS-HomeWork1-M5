@@ -10,13 +10,6 @@ import Foundation
 
 class UserDefaultStorage {
     
-    enum UserDefaultType {
-        case string
-        case int
-        case bool
-        case double
-    }
-    
     enum UserDefaultKeys: String {
         case temporarykey
     }
@@ -28,20 +21,7 @@ class UserDefaultStorage {
         userDefault.set(data, forKey: key.rawValue)
     }
     
-    func retrieveString(type: UserDefaultType,
-                        key: UserDefaultKeys
-    ) ->  Any? {
-        let data: Any?
-        switch type {
-        case .string:
-            data = userDefault.string(forKey: key.rawValue)
-        case .double:
-            data = userDefault.double(forKey: key.rawValue)
-        case .int:
-            data = userDefault.integer(forKey: key.rawValue)
-        case .bool:
-            data = userDefault.bool(forKey: key.rawValue)
-        }
-        return data
+    func retrieveString( key: UserDefaultKeys) ->  Any? {
+        return userDefault.object(forKey: key.rawValue)
     }
 }

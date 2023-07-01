@@ -9,6 +9,8 @@ import UIKit
 
 class CharacterInfoViewController: UIViewController {
     
+    private lazy var nameLabel = MakeView.shared.makeLabel(text: "Rick", size: 30, weight: .bold)
+    
     private lazy var characterImage: UIImageView = {
         let view = UIImageView()
         
@@ -19,15 +21,6 @@ class CharacterInfoViewController: UIViewController {
                 .equalTo(200)
         }
 
-        return view
-    }()
-    
-    private lazy var nameLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .white
-        //view.lineBreakMode =
-        view.numberOfLines = 0
-        view.font = .systemFont(ofSize: 30, weight: .medium)
         return view
     }()
     

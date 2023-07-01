@@ -20,22 +20,24 @@ class KeychainStorage {
     func save(
         service: String,
         account: String,
-        password: Data
+        data: Data
     ) throws {
         let query: [String: AnyObject] = [
-            kSecValueData as String: password as AnyObject,
+            kSecValueData as String: data as AnyObject,
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service as AnyObject,
             kSecAttrAccount as String: account as AnyObject
         ]
         
-        let status = SecItemAdd(
-            query as CFDictionary,
-            nil
-        )
+        let status = SecItemAdd(query as CFDictionary, nil)
         
         guard status != errSecDuplicateItem else {
-            throw KeychainError.duplicateEntry
+            update(
+                service: service,
+                account: account,
+                data: data
+            )
+            return
         }
         
         guard status == errSecSuccess else {
@@ -48,32 +50,16 @@ class KeychainStorage {
     func update(
         service: String,
         account: String,
-        password: Data
-    ) throws {
+        data: Data
+    ) {
         let query: [String: AnyObject] = [
-            kSecValueData as String: password as AnyObject,
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service as AnyObject,
             kSecAttrAccount as String: account as AnyObject
-        ]
+        ] 
+        let attributesToUpdate = [kSecValueData: data] as CFDictionary
         
-        let status = SecItemAdd(
-            query as CFDictionary,
-            nil
-        )
-        
-        if status == errSecDuplicateItem {
-            let query: [String: AnyObject] = [
-                kSecClass as String: kSecClassGenericPassword,
-                kSecAttrService as String: service as AnyObject,
-                kSecAttrAccount as String: account as AnyObject
-            ]
-            let attributesToUpdate = [kSecValueData: password] as CFDictionary
-            
-            SecItemUpdate(query as CFDictionary, attributesToUpdate)
-        }
-        
-        print("updated")
+        SecItemUpdate(query as CFDictionary, attributesToUpdate)
     }
     
     func get(
@@ -86,7 +72,7 @@ class KeychainStorage {
             kSecAttrService as String: service as AnyObject,
             kSecAttrAccount as String: account as AnyObject,
             kSecMatchLimit as String: kSecMatchLimitOne
-        ]
+        ] 
         
         var result: AnyObject?
         let status = SecItemCopyMatching(
