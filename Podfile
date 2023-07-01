@@ -7,5 +7,9 @@ target 'IOS-GEEKS-HomeWork1-M5' do
 
   pod "SnapKit"
   pod "Kingfisher"
-
+  pod "FirebaseFirestore"
+  pod "Firebase"
+  pod "Firebase"
+  pod "Firebase/Core"
+  pod "Firebase/Auth"
 end
