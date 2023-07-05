@@ -20,8 +20,8 @@ class RickAndMortyViewController: UIViewController {
             collectionViewLayout: layout
         )
         
-        view.delegate = self
         view.dataSource = self
+        view.delegate = self
         view.register(
             CharacterCollectionViewCell.self,
             forCellWithReuseIdentifier: CharacterCollectionViewCell.reuseID
@@ -32,8 +32,11 @@ class RickAndMortyViewController: UIViewController {
 
     private let rickAndMortyViewModel = RickAndMortyViewModel()
     private var characters: [Character] = []
-
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.hidesBackButton = true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -59,9 +62,10 @@ class RickAndMortyViewController: UIViewController {
     }
 }
 
-//MARK: - UICollectionViewDataSource && UICollectionViewDelegate
+//MARK: - UICollectionViewDataSource
 
-extension RickAndMortyViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension RickAndMortyViewController: UICollectionViewDataSource {
+    
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
@@ -81,11 +85,16 @@ extension RickAndMortyViewController: UICollectionViewDataSource, UICollectionVi
         cell.display(item: model)
         return cell
     }
+}
+
+//MARK: - UICollectionViewDelegate
+
+extension RickAndMortyViewController: UICollectionViewDelegate {
     
     func collectionView(
         _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath)
-    {
+        didSelectItemAt indexPath: IndexPath
+    ) {
         let vc = CharacterInfoViewController()
         vc.character = characters[indexPath.item]
         navigationController?.pushViewController(vc, animated: true)

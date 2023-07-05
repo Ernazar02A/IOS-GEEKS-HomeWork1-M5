@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		523975F72A52E03000013825 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975F62A52E03000013825 /* AuthorizationViewModel.swift */; };
+		523975FA2A52E04900013825 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975F92A52E04900013825 /* AuthorizationViewController.swift */; };
+		523975FC2A53109300013825 /* PhoneAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975FB2A53109300013825 /* PhoneAuthorizationViewController.swift */; };
+		523975FE2A5310AA00013825 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975FD2A5310AA00013825 /* SignUpViewController.swift */; };
+		523976002A53211100013825 /* SMSCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975FF2A53211100013825 /* SMSCodeViewController.swift */; };
+		523976022A5416C700013825 /* EmailAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523976012A5416C700013825 /* EmailAuthorizationService.swift */; };
+		523976072A55543600013825 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523976062A55543600013825 /* SignInViewController.swift */; };
 		523B40532A4AAA5100585929 /* RickAndMortyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523B40522A4AAA5100585929 /* RickAndMortyViewModel.swift */; };
 		52C65DCC2A4CBD440038FD60 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C65DCB2A4CBD440038FD60 /* UserDefaultStorage.swift */; };
 		52C65DD12A4D7E0F0038FD60 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C65DD02A4D7E0F0038FD60 /* KeychainStorage.swift */; };
 		52C65DDA2A4EEF380038FD60 /* MakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C65DD92A4EEF380038FD60 /* MakeView.swift */; };
 		52C65DDC2A50600C0038FD60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52C65DDB2A50600C0038FD60 /* GoogleService-Info.plist */; };
+		52C65DDE2A5132230038FD60 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C65DDD2A5132230038FD60 /* SplashViewController.swift */; };
+		52C65DE12A5134780038FD60 /* PhoneNumberAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C65DE02A5134780038FD60 /* PhoneNumberAuthorizationService.swift */; };
 		52E6D2A22A3DDDEB004CF566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D2A12A3DDDEB004CF566 /* AppDelegate.swift */; };
 		52E6D2A42A3DDDEB004CF566 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D2A32A3DDDEB004CF566 /* SceneDelegate.swift */; };
 		52E6D2A62A3DDDEB004CF566 /* RickAndMortyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6D2A52A3DDDEB004CF566 /* RickAndMortyViewController.swift */; };
@@ -29,11 +38,21 @@
 /* Begin PBXFileReference section */
 		16EBA9D7718976E5CFA138A9 /* Pods-IOS-GEEKS-HomeWork1-M5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-GEEKS-HomeWork1-M5.release.xcconfig"; path = "Target Support Files/Pods-IOS-GEEKS-HomeWork1-M5/Pods-IOS-GEEKS-HomeWork1-M5.release.xcconfig"; sourceTree = "<group>"; };
 		4D94B2AF25BD0FFD24B34D1A /* Pods_IOS_GEEKS_HomeWork1_M5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_GEEKS_HomeWork1_M5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		523975F62A52E03000013825 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
+		523975F92A52E04900013825 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		523975FB2A53109300013825 /* PhoneAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthorizationViewController.swift; sourceTree = "<group>"; };
+		523975FD2A5310AA00013825 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		523975FF2A53211100013825 /* SMSCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeViewController.swift; sourceTree = "<group>"; };
+		523976012A5416C700013825 /* EmailAuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthorizationService.swift; sourceTree = "<group>"; };
+		523976032A544DA600013825 /* IOS-GEEKS-HomeWork1-M5.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "IOS-GEEKS-HomeWork1-M5.entitlements"; sourceTree = "<group>"; };
+		523976062A55543600013825 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		523B40522A4AAA5100585929 /* RickAndMortyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyViewModel.swift; sourceTree = "<group>"; };
 		52C65DCB2A4CBD440038FD60 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		52C65DD02A4D7E0F0038FD60 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		52C65DD92A4EEF380038FD60 /* MakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeView.swift; sourceTree = "<group>"; };
 		52C65DDB2A50600C0038FD60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		52C65DDD2A5132230038FD60 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		52C65DE02A5134780038FD60 /* PhoneNumberAuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberAuthorizationService.swift; sourceTree = "<group>"; };
 		52E6D29E2A3DDDEB004CF566 /* IOS-GEEKS-HomeWork1-M5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-GEEKS-HomeWork1-M5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E6D2A12A3DDDEB004CF566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E6D2A32A3DDDEB004CF566 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +81,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		523975F52A52E00100013825 /* AuthorizationWorkflow */ = {
+			isa = PBXGroup;
+			children = (
+				523975F62A52E03000013825 /* AuthorizationViewModel.swift */,
+				523975F92A52E04900013825 /* AuthorizationViewController.swift */,
+				523976042A55538E00013825 /* PhoneAuthorization */,
+				523976052A5553BB00013825 /* EmailAuthorization */,
+			);
+			path = AuthorizationWorkflow;
+			sourceTree = "<group>";
+		};
+		523976042A55538E00013825 /* PhoneAuthorization */ = {
+			isa = PBXGroup;
+			children = (
+				523975FF2A53211100013825 /* SMSCodeViewController.swift */,
+				523975FB2A53109300013825 /* PhoneAuthorizationViewController.swift */,
+			);
+			path = PhoneAuthorization;
+			sourceTree = "<group>";
+		};
+		523976052A5553BB00013825 /* EmailAuthorization */ = {
+			isa = PBXGroup;
+			children = (
+				523975FD2A5310AA00013825 /* SignUpViewController.swift */,
+				523976062A55543600013825 /* SignInViewController.swift */,
+			);
+			path = EmailAuthorization;
+			sourceTree = "<group>";
+		};
 		523B404E2A49FA9200585929 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,12 +118,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		523B40512A4AA9D600585929 /* ViewModel */ = {
+		523B40512A4AA9D600585929 /* MainWorkflow */ = {
 			isa = PBXGroup;
 			children = (
+				52E6D2A52A3DDDEB004CF566 /* RickAndMortyViewController.swift */,
 				523B40522A4AAA5100585929 /* RickAndMortyViewModel.swift */,
+				52E6D2D82A418029004CF566 /* CharacterInfoViewController.swift */,
 			);
-			path = ViewModel;
+			path = MainWorkflow;
 			sourceTree = "<group>";
 		};
 		52C65DCA2A4CBD0F0038FD60 /* UserDefaultStorage */ = {
@@ -111,6 +161,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		52C65DDF2A5134300038FD60 /* AuthorizationService */ = {
+			isa = PBXGroup;
+			children = (
+				52C65DE02A5134780038FD60 /* PhoneNumberAuthorizationService.swift */,
+				523976012A5416C700013825 /* EmailAuthorizationService.swift */,
+			);
+			path = AuthorizationService;
+			sourceTree = "<group>";
+		};
 		52E6D2952A3DDDEA004CF566 = {
 			isa = PBXGroup;
 			children = (
@@ -132,9 +191,9 @@
 		52E6D2A02A3DDDEB004CF566 /* IOS-GEEKS-HomeWork1-M5 */ = {
 			isa = PBXGroup;
 			children = (
+				523976032A544DA600013825 /* IOS-GEEKS-HomeWork1-M5.entitlements */,
 				52E6D2CC2A408856004CF566 /* App */,
 				52E6D2B72A3DDF98004CF566 /* Model */,
-				523B40512A4AA9D600585929 /* ViewModel */,
 				52E6D2B82A3DDFA1004CF566 /* Workflow */,
 				523B404E2A49FA9200585929 /* View */,
 				52E6D2B52A3DDF07004CF566 /* Resourse */,
@@ -156,6 +215,7 @@
 		52E6D2B72A3DDF98004CF566 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52C65DDF2A5134300038FD60 /* AuthorizationService */,
 				52C65DD82A4EEF150038FD60 /* Helper */,
 				52C65DCD2A4D7D580038FD60 /* dataStorageService */,
 				52E6D2DC2A41BB67004CF566 /* Extention */,
@@ -169,8 +229,9 @@
 		52E6D2B82A3DDFA1004CF566 /* Workflow */ = {
 			isa = PBXGroup;
 			children = (
-				52E6D2A52A3DDDEB004CF566 /* RickAndMortyViewController.swift */,
-				52E6D2D82A418029004CF566 /* CharacterInfoViewController.swift */,
+				52C65DDD2A5132230038FD60 /* SplashViewController.swift */,
+				523975F52A52E00100013825 /* AuthorizationWorkflow */,
+				523B40512A4AA9D600585929 /* MainWorkflow */,
 			);
 			path = Workflow;
 			sourceTree = "<group>";
@@ -352,11 +413,20 @@
 				52E6D2DB2A41BB61004CF566 /* String + Extention.swift in Sources */,
 				52E6D2A22A3DDDEB004CF566 /* AppDelegate.swift in Sources */,
 				52C65DDA2A4EEF380038FD60 /* MakeView.swift in Sources */,
+				523976072A55543600013825 /* SignInViewController.swift in Sources */,
+				523975F72A52E03000013825 /* AuthorizationViewModel.swift in Sources */,
 				52C65DCC2A4CBD440038FD60 /* UserDefaultStorage.swift in Sources */,
+				52C65DDE2A5132230038FD60 /* SplashViewController.swift in Sources */,
+				523975FA2A52E04900013825 /* AuthorizationViewController.swift in Sources */,
+				523976022A5416C700013825 /* EmailAuthorizationService.swift in Sources */,
+				52C65DE12A5134780038FD60 /* PhoneNumberAuthorizationService.swift in Sources */,
+				523975FC2A53109300013825 /* PhoneAuthorizationViewController.swift in Sources */,
 				523B40532A4AAA5100585929 /* RickAndMortyViewModel.swift in Sources */,
 				52C65DD12A4D7E0F0038FD60 /* KeychainStorage.swift in Sources */,
+				523975FE2A5310AA00013825 /* SignUpViewController.swift in Sources */,
 				52E6D2D12A40C449004CF566 /* Character.swift in Sources */,
 				52E6D2CE2A408C45004CF566 /* NetworkService.swift in Sources */,
+				523976002A53211100013825 /* SMSCodeViewController.swift in Sources */,
 				52E6D2D92A418029004CF566 /* CharacterInfoViewController.swift in Sources */,
 				52E6D2A42A3DDDEB004CF566 /* SceneDelegate.swift in Sources */,
 				52E6D2D42A40C499004CF566 /* Constants.swift in Sources */,
@@ -498,9 +568,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "IOS-GEEKS-HomeWork1-M5/IOS-GEEKS-HomeWork1-M5.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F7W7R66652;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IOS-GEEKS-HomeWork1-M5/Resourse/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -514,6 +586,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Com.ERACompany.IOS-GEEKS-HomeWork1-M5";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -526,9 +599,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "IOS-GEEKS-HomeWork1-M5/IOS-GEEKS-HomeWork1-M5.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F7W7R66652;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IOS-GEEKS-HomeWork1-M5/Resourse/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -542,6 +617,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Com.ERACompany.IOS-GEEKS-HomeWork1-M5";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

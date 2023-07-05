@@ -9,34 +9,29 @@ import UIKit
 
 class CharacterInfoViewController: UIViewController {
     
-    private lazy var nameLabel = MakeView.shared.makeLabel(text: "Rick", size: 30, weight: .bold)
-    
+    private lazy var nameLabel = MakeView.shared.makeLabel(
+        text: "Rick",
+        size: 30,
+        weight: .bold
+    )
     private lazy var characterImage: UIImageView = {
         let view = UIImageView()
         
         view.snp.makeConstraints { make in
-            make
-                .width
-                .height
-                .equalTo(200)
+            make.width.height.equalTo(200)
         }
-
         return view
     }()
-    
     private lazy var genderLabel: UILabel = {
         let view = UILabel()
         view.textColor = .white
-        //view.lineBreakMode = true
         view.numberOfLines = 0
         view.font = .systemFont(ofSize: 30, weight: .medium)
         return view
     }()
-    
     private lazy var typeLabel: UILabel = {
         let view = UILabel()
         view.textColor = .white
-        //view.lineBreakMode = true
         view.numberOfLines = 0
         view.font = .systemFont(ofSize: 30, weight: .medium)
         return view
@@ -79,9 +74,7 @@ class CharacterInfoViewController: UIViewController {
         guard let character else {
             return
         }
-        characterImage
-            .kf
-            .setImage(with: URL(string: character.image))
+        characterImage.kf.setImage(with: URL(string: character.image))
         nameLabel.text = "Character name is \(character.name)"
         genderLabel.text = "Character gender is a \(character.gender)"
         if !character.type.isEmpty {

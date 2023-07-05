@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class RickAndMortyViewModel {
     private let networkService = NetworkService()
     

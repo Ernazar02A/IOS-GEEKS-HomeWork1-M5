@@ -80,6 +80,8 @@ class KeychainStorage {
             &result
         )
         
+        print("Read status: \(status)")
+        
         return result as? Data
     }
     
