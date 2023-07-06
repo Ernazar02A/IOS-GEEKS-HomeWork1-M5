@@ -14,7 +14,7 @@ class MakeView {
         text: String,
         bgColor: UIColor = .white,
         cornerRadius: CGFloat = 0,
-        size: CGFloat = 16,
+        size: CGFloat = Constants.Sizing.text16,
         weight: UIFont.Weight,
         color: UIColor = .black,
         alignment: NSTextAlignment = .center,
@@ -46,7 +46,7 @@ class MakeView {
     }
     
     func makeButton(
-        text: String,
+        text: String = "",
         bgColor: UIColor = .white,
         cornerRadius: CGFloat = 0,
         size: CGFloat = 16,

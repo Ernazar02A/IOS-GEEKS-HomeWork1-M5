@@ -11,7 +11,7 @@ class CharacterInfoViewController: UIViewController {
     
     private lazy var nameLabel = MakeView.shared.makeLabel(
         text: "Rick",
-        size: 30,
+        size: Constants.Sizing.text30,
         weight: .bold
     )
     private lazy var characterImage: UIImageView = {
@@ -22,20 +22,18 @@ class CharacterInfoViewController: UIViewController {
         }
         return view
     }()
-    private lazy var genderLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .white
-        view.numberOfLines = 0
-        view.font = .systemFont(ofSize: 30, weight: .medium)
-        return view
-    }()
-    private lazy var typeLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .white
-        view.numberOfLines = 0
-        view.font = .systemFont(ofSize: 30, weight: .medium)
-        return view
-    }()
+    private lazy var genderLabel = MakeView.shared.makeLabel(
+        text: "Male",
+        size: Constants.Sizing.text30,
+        weight: .medium,
+        color: .white
+    )
+    private lazy var typeLabel = MakeView.shared.makeLabel(
+        text: "Male",
+        size: Constants.Sizing.text30,
+        weight: .medium,
+        color: .white
+    )
     
     var character: Character?
 

@@ -24,16 +24,14 @@ class AuthorizationViewController: UIViewController {
         text: "Выберите способ авторизации",
         bgColor: .clear,
         cornerRadius: Constants.Sizing.corner20,
-        size: 20,
+        size: Constants.Sizing.text20,
         weight: .medium
     )
     private let phoneButton = MakeView.shared.makeButton(
-        text: "",
         cornerRadius: Constants.Sizing.corner50,
         image: UIImage(named: "phone")
     )
     private let emailButton = MakeView.shared.makeButton(
-        text: "",
         bgColor: .clear,
         image: UIImage(named: "email")
     )

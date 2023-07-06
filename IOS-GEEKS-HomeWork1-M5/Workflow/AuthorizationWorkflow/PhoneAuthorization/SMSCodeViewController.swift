@@ -24,17 +24,17 @@ class SMSCodeViewController: UIViewController {
         text: "Введите смс код",
         bgColor: .clear,
         cornerRadius: Constants.Sizing.corner20,
-        size: 20,
+        size: Constants.Sizing.text20,
         weight: .medium
     )
     private let smsCodeTextField = MakeView.shared.makeTextField(
         placeholder: "",
-        cornerRadius: 10
+        cornerRadius: Constants.Sizing.corner10
     )
     private let sabmitButton = MakeView.shared.makeButton(
         text: "Submit",
         cornerRadius: Constants.Sizing.corner10,
-        size: 25,
+        size: Constants.Sizing.text25,
         weight: .medium
     )
     
@@ -66,7 +66,7 @@ class SMSCodeViewController: UIViewController {
             return
         }
         
-        auth.signInVerificationCode(with: smsCodeTextField.text!) { [weak self]result in
+        auth.signInVerificationCode(with: smsCode) { [weak self]result in
             guard let self = self else {
                 return
             }

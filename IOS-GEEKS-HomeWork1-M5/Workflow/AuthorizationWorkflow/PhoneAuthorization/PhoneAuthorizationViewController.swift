@@ -17,25 +17,25 @@ class PhoneAuthorizationViewController: UIViewController {
     private let authView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white.withAlphaComponent(0.7)
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = Constants.Sizing.corner20
         return view
     }()
     private let chooseLabel = MakeView.shared.makeLabel(
         text: "Введите ваш номер",
         bgColor: .clear,
-        cornerRadius: 20,
-        size: 20,
+        cornerRadius: Constants.Sizing.corner20,
+        size: Constants.Sizing.text20,
         weight: .medium
     )
     private let phoneTextField = MakeView.shared.makeTextField(
         placeholder: "+996 707 725678",
-        cornerRadius: 10,
+        cornerRadius: Constants.Sizing.corner10,
         text: "+996707725678"
     )
     private let submitButton = MakeView.shared.makeButton(
         text: "Get Code",
-        cornerRadius: 15,
-        size: 25,
+        cornerRadius: Constants.Sizing.corner15,
+        size: Constants.Sizing.text25,
         weight: .medium
     )
     

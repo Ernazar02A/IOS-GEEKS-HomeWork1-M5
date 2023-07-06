@@ -10,8 +10,14 @@ import FirebaseAuth
 
 class EmailAuthorizationService: BaseAuthorization {
     
-    func signIn(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+    func signIn(email: String,
+                password: String,
+                completion: @escaping (Result<Void, Error>) -> Void
+    ) {
+        Auth.auth().signIn(
+            withEmail: email,
+            password: password
+        ) { authResult, error in
             if let error = error {
                 print(error.localizedDescription)
                 completion(.failure(error))
@@ -22,8 +28,14 @@ class EmailAuthorizationService: BaseAuthorization {
         }
     }
     
-    func signUp(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+    func signUp(email: String,
+                password: String,
+                completion: @escaping (Result<Void, Error>) -> Void
+    ) {
+        Auth.auth().createUser(
+            withEmail: email,
+            password: password
+        ) { authResult, error in
             if let error = error {
                 print(error.localizedDescription)
                 completion(.failure(error))

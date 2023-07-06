@@ -24,14 +24,14 @@ class SignUpViewController: UIViewController {
         text: "Регистрация",
         bgColor: .clear,
         cornerRadius: Constants.Sizing.corner20,
-        size: 20,
+        size: Constants.Sizing.text20,
         weight: .medium
     )
     private let  loginLabel = MakeView.shared.makeLabel(
         text: "Эл.почта",
         bgColor: .clear,
         cornerRadius: Constants.Sizing.corner20,
-        size: 16,
+        size: Constants.Sizing.text16,
         weight: .regular,
         alignment: .left
     )
@@ -44,7 +44,7 @@ class SignUpViewController: UIViewController {
         text: "Пароль",
         bgColor: .clear,
         cornerRadius: Constants.Sizing.corner20,
-        size: 16,
+        size: Constants.Sizing.text16,
         weight: .regular,
         alignment: .left
     )
@@ -56,7 +56,7 @@ class SignUpViewController: UIViewController {
         text: "Повторите Пароль",
         bgColor: .clear,
         cornerRadius: Constants.Sizing.corner20,
-        size: 16,
+        size: Constants.Sizing.text16,
         weight: .regular,
         alignment: .left
     )
@@ -68,21 +68,21 @@ class SignUpViewController: UIViewController {
         text: "Sign up",
         bgColor: .black,
         cornerRadius: Constants.Sizing.corner10,
-        size: 25,
+        size: Constants.Sizing.text25,
         weight: .medium,
         color: .white
     )
     private let signInButton = MakeView.shared.makeButton(
         text: "Войти",
         bgColor: .clear,
-        size: 18,
+        size: Constants.Sizing.text18,
         weight: .medium,
         color: .black
     )
     private let errorLabel = MakeView.shared.makeLabel(
         text: "",
         bgColor: .clear,
-        size: 16,
+        size: Constants.Sizing.text16,
         weight: .regular,
         color: .red
     )
