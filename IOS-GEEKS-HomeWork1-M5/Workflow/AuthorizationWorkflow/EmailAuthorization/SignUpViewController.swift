@@ -79,6 +79,13 @@ class SignUpViewController: UIViewController {
         weight: .medium,
         color: .black
     )
+    private let errorLabel = MakeView.shared.makeLabel(
+        text: "",
+        bgColor: .clear,
+        size: 16,
+        weight: .regular,
+        color: .red
+    )
     
     private  let auth = AuthorizationViewModel()
     
@@ -100,6 +107,7 @@ class SignUpViewController: UIViewController {
         authView.addSubview(passwordLabel)
         authView.addSubview(confirmdLabel)
         authView.addSubview(confirmTextField)
+        authView.addSubview(errorLabel)
         authView.addSubview(signInButton)
         signUpButton.addTarget(
             self,
@@ -115,7 +123,17 @@ class SignUpViewController: UIViewController {
     
     @objc private func signUpButtonTapped(sender: UIButton) {
         guard let email = emailTextField.text,
-              let password = passwordTextField.text else {
+              let password = passwordTextField.text,
+              let confirm = confirmTextField.text else {
+            return
+        }
+        let result = auth.checkSignInEndSignUp(
+            email: email,
+            password: password,
+            confirm: confirm
+        )
+        errorLabel.text = auth.workErrors(error: result)
+        guard errorLabel.text == "" else {
             return
         }
         auth.signUpEmail(email: email, password: password) { [weak self]result in
@@ -126,6 +144,11 @@ class SignUpViewController: UIViewController {
             case .success(()):
                 self.navigationController?.pushViewController(RickAndMortyViewController(), animated: true)
             case .failure(let error):
+                if error.localizedDescription == "The email address is already in use by another account." {
+                    errorLabel.text = "The email address is already in use by another account."
+                } else {
+                    errorLabel.text = "Введите email в правильном формате"
+                }
                 print(error.localizedDescription)
             }
         }
@@ -143,7 +166,7 @@ class SignUpViewController: UIViewController {
         authView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(20)
-            make.height.equalTo(400)
+            make.height.equalTo(420)
         }
         
         signUpLabel.snp.makeConstraints { make in
@@ -184,10 +207,15 @@ class SignUpViewController: UIViewController {
             make.top.equalTo(confirmdLabel.snp.bottom).offset(5)
         }
         
+        errorLabel.snp.makeConstraints { make in
+            make.top.equalTo(confirmTextField.snp.bottom).offset(5)
+            make.horizontalEdges.equalToSuperview().inset(20)
+        }
+        
         signUpButton.snp.makeConstraints { make in
             make.height.equalTo(35)
             make.width.equalTo(150)
-            make.top.equalTo(confirmTextField.snp.bottom).offset(25)
+            make.top.equalTo(confirmTextField.snp.bottom).offset(42)
             make.centerX.equalToSuperview()
         }
         signInButton.snp.makeConstraints { make in

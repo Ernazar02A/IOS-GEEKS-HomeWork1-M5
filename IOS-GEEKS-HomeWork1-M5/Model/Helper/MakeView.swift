@@ -17,7 +17,8 @@ class MakeView {
         size: CGFloat = 16,
         weight: UIFont.Weight,
         color: UIColor = .black,
-        alignment: NSTextAlignment = .center
+        alignment: NSTextAlignment = .center,
+        line: Int = 0
     ) -> UILabel {
         let label = UILabel()
         label.textAlignment = alignment
@@ -26,6 +27,7 @@ class MakeView {
         label.textColor = color
         label.layer.cornerRadius = cornerRadius
         label.backgroundColor = bgColor
+        label.numberOfLines = line
         return label
     }
     

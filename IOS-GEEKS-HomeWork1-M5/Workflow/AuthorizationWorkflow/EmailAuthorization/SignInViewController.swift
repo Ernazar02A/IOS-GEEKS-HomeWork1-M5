@@ -23,27 +23,24 @@ class SignInViewController: UIViewController {
     private let signInLabel = MakeView.shared.makeLabel(
         text: "Войти",
         bgColor: .clear,
-        cornerRadius: Constants.Sizing.corner20,
         size: 20,
         weight: .medium
     )
     private let loginLabel = MakeView.shared.makeLabel(
         text: "Эл.почта",
         bgColor: .clear,
-        cornerRadius: Constants.Sizing.corner20,
         size: 16,
         weight: .regular,
         alignment: .left
     )
     private let emailTextField = MakeView.shared.makeTextField(
-        placeholder: "ernazaraibekov2017@gmail.com",
+        placeholder: "example@gmail.com",
         cornerRadius: Constants.Sizing.corner10,
         text: "ernazaraibekov2017@gmail.com"
     )
     private let passwordLabel = MakeView.shared.makeLabel(
         text: "Пароль",
         bgColor: .clear,
-        cornerRadius: Constants.Sizing.corner20,
         size: 16,
         weight: .regular,
         alignment: .left
@@ -67,6 +64,13 @@ class SignInViewController: UIViewController {
         weight: .medium,
         color: .black
     )
+    private let errorLabel = MakeView.shared.makeLabel(
+        text: "",
+        bgColor: .clear,
+        size: 16,
+        weight: .regular,
+        color: .red
+    )
     
     private let auth = AuthorizationViewModel()
     
@@ -87,6 +91,7 @@ class SignInViewController: UIViewController {
         authView.addSubview(passwordLabel)
         authView.addSubview(passwordTextField)
         authView.addSubview(signUpButton)
+        authView.addSubview(errorLabel)
         
         signInButton.addTarget(
             self,
@@ -105,6 +110,15 @@ class SignInViewController: UIViewController {
               let password = passwordTextField.text else {
             return
         }
+        let result = auth.checkSignInEndSignUp(
+            email: email,
+            password: password,
+            confirm: nil
+        )
+        errorLabel.text = auth.workErrors(error: result)
+        guard errorLabel.text == "" else {
+            return
+        }
         auth.signInEmail(email: email, password: password) { [weak self] result in
             guard let self = self else {
                 return
@@ -113,6 +127,7 @@ class SignInViewController: UIViewController {
             case .success(()):
                 navigationController?.pushViewController(RickAndMortyViewController(), animated: true)
             case .failure(let error):
+                errorLabel.text = "Введите данные правильно"
                 print(error.localizedDescription)
             }
         }
@@ -160,6 +175,11 @@ class SignInViewController: UIViewController {
             make.top.equalTo(passwordLabel.snp.bottom).offset(5)
         }
         
+        errorLabel.snp.makeConstraints { make in
+            make.top.equalTo(passwordTextField.snp.bottom).offset(5)
+            make.centerX.equalToSuperview()
+        }
+        
         signInButton.snp.makeConstraints { make in
             make.height.equalTo(35)
             make.width.equalTo(150)
@@ -171,5 +191,4 @@ class SignInViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-
 }
