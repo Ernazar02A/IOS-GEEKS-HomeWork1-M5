@@ -73,10 +73,9 @@ class SMSCodeViewController: UIViewController {
             switch result {
             case .success(let user):
                 print(user)
-                let vc = RickAndMortyViewController()
-                let nav = UINavigationController(rootViewController: vc)
-                nav.modalPresentationStyle = .fullScreen
-                self.present(nav, animated: true)
+                let vc = MainTabBarViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false)
             case .failure(let error):
                 print(error.localizedDescription)
             }

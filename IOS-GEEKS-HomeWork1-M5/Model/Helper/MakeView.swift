@@ -35,10 +35,14 @@ class MakeView {
         placeholder: String,
         cornerRadius: CGFloat = 0,
         bgColor: UIColor = .white,
-        text: String = ""
-    ) -> UITextField {
-        let textField = UITextField()
+        text: String = "",
+        borderWidth: CGFloat = 0,
+        borderColor: CGColor = UIColor.black.cgColor
+    ) -> UpdateTextField {
+        let textField = UpdateTextField()
         textField.text = text
+        textField.layer.borderWidth = borderWidth
+        textField.layer.borderColor = borderColor
         textField.layer.cornerRadius = cornerRadius
         textField.placeholder = placeholder
         textField.backgroundColor = bgColor

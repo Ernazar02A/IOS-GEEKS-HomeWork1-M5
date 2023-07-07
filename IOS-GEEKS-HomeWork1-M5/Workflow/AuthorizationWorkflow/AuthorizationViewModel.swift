@@ -50,7 +50,11 @@ class AuthorizationViewModel {
         emailAuthService.signUp(email: email, password: password, completion: completion)
     }
     
-    func checkSignInEndSignUp(email: String, password: String, confirm: String?) -> AuthorizationError {
+    func checkSignInEndSignUp(
+        email: String,
+        password: String,
+        confirm: String?
+    ) -> AuthorizationError {
         guard let confirm = confirm else {
             return password.count == 0 || email.count == 0 ? .empty : .norm
         }
@@ -61,7 +65,6 @@ class AuthorizationViewModel {
         } else if password != confirm {
             return .notLike
         }
-        
         return .norm
     }
     

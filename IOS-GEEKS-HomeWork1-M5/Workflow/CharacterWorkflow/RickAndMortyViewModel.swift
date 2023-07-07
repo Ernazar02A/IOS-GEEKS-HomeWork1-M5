@@ -9,8 +9,14 @@ import Foundation
 
 class RickAndMortyViewModel {
     private let networkService = NetworkService()
+    private let firestoreManager = FirestoreManager.shared
     
     func fetchCharacters() async throws -> [Character] {
         return try await networkService.fetchCharacters()
+    }
+    
+    func addNewCharachter(character: Character) {
+        let character = RickAndMortyUtility.mapData(character: character)
+        firestoreManager.addData(with: .character, data: character)
     }
 }

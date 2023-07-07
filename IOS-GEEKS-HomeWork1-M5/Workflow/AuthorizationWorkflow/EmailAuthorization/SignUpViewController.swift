@@ -142,7 +142,9 @@ class SignUpViewController: UIViewController {
             }
             switch result {
             case .success(()):
-                self.navigationController?.pushViewController(RickAndMortyViewController(), animated: true)
+                let vc = MainTabBarViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false)
             case .failure(let error):
                 if error.localizedDescription == "The email address is already in use by another account." {
                     errorLabel.text = "The email address is already in use by another account."

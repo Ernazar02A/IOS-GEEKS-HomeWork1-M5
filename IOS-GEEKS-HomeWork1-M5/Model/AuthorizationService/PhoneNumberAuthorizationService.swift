@@ -8,38 +8,14 @@
 import UIKit
 import FirebaseAuth
 
-class BaseAuthorization {
-    
-    private let keychain = KeychainStorage.shared
-    
-    func saveSession() {
-        let minuteLater = Calendar.current.date(bySetting: .second, value: 3, of: Date())!
-        let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .secondsSince1970
-        let data = try! encoder.encode(minuteLater)
-        do {
-            try self.keychain.save(
-                service:
-                    Constants
-                    .Authorization
-                    .service,
-                account:
-                    Constants
-                    .Authorization
-                    .account,
-                data: data
-            )
-        }  catch {
-            print(error.localizedDescription)
-        }
-    }
-}
-
 class PhoneNumberAuthorizationService: BaseAuthorization {
     
     private let keychain = KeychainStorage.shared
     
-    func signIn(with phoneNumber: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func signIn(
+        with phoneNumber: String,
+        completion: @escaping (Result<Void, Error>) -> Void
+    ) {
         PhoneAuthProvider.provider()
             .verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
                 // Sign in using the verificationID and the code sent to the user
@@ -69,7 +45,10 @@ class PhoneNumberAuthorizationService: BaseAuthorization {
             }
     }
     
-    func signInverificationCode(with verificationCode: String, completion: @escaping (Result<User, Error>) -> Void) {
+    func signInverificationCode(
+        with verificationCode: String,
+        completion: @escaping (Result<User, Error>) -> Void
+    ) {
         guard let data = keychain.get(
             service:
                 Constants

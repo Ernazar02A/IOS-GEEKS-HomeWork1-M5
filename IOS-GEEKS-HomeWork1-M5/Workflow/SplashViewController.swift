@@ -14,6 +14,7 @@ class SplashViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
         if
@@ -25,10 +26,9 @@ class SplashViewController: UIViewController {
                 date > Date() {
             print(date)
             print(Date())
-            let vc = RickAndMortyViewController()
-            let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .fullScreen
-            self.present(nav, animated: false)
+            let vc = MainTabBarViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false)
         } else {
             let vc = AuthorizationViewController()
             let nav = UINavigationController(rootViewController: vc)

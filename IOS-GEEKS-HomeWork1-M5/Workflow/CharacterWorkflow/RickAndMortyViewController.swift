@@ -33,13 +33,28 @@ class RickAndMortyViewController: UIViewController {
     private let rickAndMortyViewModel = RickAndMortyViewModel()
     private var characters: [Character] = []
     
+    let refreshControl: UIRefreshControl = {
+        let view = UIRefreshControl()
+        view.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        view.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        return view
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesBackButton = true
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setup()
+        fetchCharacters()
+        
+        collectionView.refreshControl = refreshControl
+    }
+
+    @objc func refresh(_ sender: UIRefreshControl) {
+        refreshControl.endRefreshing()
         fetchCharacters()
     }
     
@@ -52,11 +67,25 @@ class RickAndMortyViewController: UIViewController {
         Task {
             do {
                 characters = try await rickAndMortyViewModel.fetchCharacters()
+                fetchCharactersFirestore()
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
             } catch {
                 print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func fetchCharactersFirestore() {
+        FirestoreManager.shared.readData(with: .character) { result in
+            switch result {
+            case .success(let model):
+                let characters = RickAndMortyUtility.mapData(data: model)
+                self.characters.append(contentsOf: characters)
+                self.collectionView.reloadData()
+            case .failure(let error):
+                print(error)
             }
         }
     }

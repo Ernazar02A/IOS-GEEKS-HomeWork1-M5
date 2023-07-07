@@ -125,7 +125,9 @@ class SignInViewController: UIViewController {
             }
             switch result {
             case .success(()):
-                navigationController?.pushViewController(RickAndMortyViewController(), animated: true)
+                let vc = MainTabBarViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false)
             case .failure(let error):
                 errorLabel.text = "Введите данные правильно"
                 print(error.localizedDescription)
