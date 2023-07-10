@@ -9,11 +9,10 @@ import UIKit
 
 class SMSCodeViewController: UIViewController {
 
-    private let backgroundImage: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "AuthbgImage")
-        return view
-    }()
+    private let backgroundImage: UIImageView = MakeView.shared.makeImage(
+        type: .named,
+        image: "AuthbgImage"
+    )
     private let authView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white.withAlphaComponent(0.7)
@@ -38,7 +37,7 @@ class SMSCodeViewController: UIViewController {
         weight: .medium
     )
     
-    private let auth = AuthorizationViewModel()
+    private let authorizationViewModel = AuthorizationViewModel()
     private let keyChain = KeychainStorage.shared
     
     override func viewDidLoad() {
@@ -66,7 +65,7 @@ class SMSCodeViewController: UIViewController {
             return
         }
         
-        auth.signInVerificationCode(with: smsCode) { [weak self]result in
+        authorizationViewModel.signInVerificationCode(with: smsCode) { [weak self]result in
             guard let self = self else {
                 return
             }

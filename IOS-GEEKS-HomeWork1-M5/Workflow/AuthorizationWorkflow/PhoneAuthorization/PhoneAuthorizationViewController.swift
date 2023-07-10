@@ -9,11 +9,10 @@ import UIKit
 
 class PhoneAuthorizationViewController: UIViewController {
 
-    private let backgroundImage: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "AuthbgImage")
-        return view
-    }()
+    private let backgroundImage: UIImageView = MakeView.shared.makeImage(
+        type: .named,
+        image: "AuthbgImage"
+    )
     private let authView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white.withAlphaComponent(0.7)

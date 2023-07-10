@@ -9,25 +9,24 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
-    private let backgroundImage: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "AuthbgImage")
-        return view
-    }()
-    private let authView: UIView = {
+    private let backgroundImage: UIImageView = MakeView.shared.makeImage(
+        type: .named,
+        image: "AuthbgImage"
+    )
+    private lazy var authView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white.withAlphaComponent(0.7)
         view.layer.cornerRadius = Constants.Sizing.corner20
         return view
     }()
-    private let signUpLabel = MakeView.shared.makeLabel(
+    private lazy var signUpLabel = MakeView.shared.makeLabel(
         text: "Регистрация",
         bgColor: .clear,
         cornerRadius: Constants.Sizing.corner20,
         size: Constants.Sizing.text20,
         weight: .medium
     )
-    private let  loginLabel = MakeView.shared.makeLabel(
+    private lazy var  loginLabel = MakeView.shared.makeLabel(
         text: "Эл.почта",
         bgColor: .clear,
         cornerRadius: Constants.Sizing.corner20,
@@ -35,12 +34,12 @@ class SignUpViewController: UIViewController {
         weight: .regular,
         alignment: .left
     )
-    private let emailTextField = MakeView.shared.makeTextField(
+    private lazy var emailTextField = MakeView.shared.makeTextField(
         placeholder: "ernazaraibekov2017@gmail.com",
         cornerRadius: Constants.Sizing.corner10,
         text: "ernazaraibekov2017@gmail.com"
     )
-    private let passwordLabel = MakeView.shared.makeLabel(
+    private lazy var passwordLabel = MakeView.shared.makeLabel(
         text: "Пароль",
         bgColor: .clear,
         cornerRadius: Constants.Sizing.corner20,
@@ -48,11 +47,12 @@ class SignUpViewController: UIViewController {
         weight: .regular,
         alignment: .left
     )
-    private let passwordTextField = MakeView.shared.makeTextField(
+    private lazy var passwordTextField = MakeView.shared.makeTextField(
         placeholder: "111111",
-        cornerRadius: Constants.Sizing.corner10
+        cornerRadius: Constants.Sizing.corner10,
+        securyText: true
     )
-    private let confirmdLabel = MakeView.shared.makeLabel(
+    private lazy var confirmdLabel = MakeView.shared.makeLabel(
         text: "Повторите Пароль",
         bgColor: .clear,
         cornerRadius: Constants.Sizing.corner20,
@@ -60,40 +60,57 @@ class SignUpViewController: UIViewController {
         weight: .regular,
         alignment: .left
     )
-    private let confirmTextField = MakeView.shared.makeTextField(
+    private lazy var confirmTextField = MakeView.shared.makeTextField(
         placeholder: "111111",
-        cornerRadius: Constants.Sizing.corner10
+        cornerRadius: Constants.Sizing.corner10,
+        securyText: true
     )
-    private let signUpButton = MakeView.shared.makeButton(
+    private lazy var signUpButton = MakeView.shared.makeButton(
         text: "Sign up",
         bgColor: .black,
         cornerRadius: Constants.Sizing.corner10,
         size: Constants.Sizing.text25,
         weight: .medium,
-        color: .white
+        titleColor: .white
     )
-    private let signInButton = MakeView.shared.makeButton(
+    private lazy var signInButton = MakeView.shared.makeButton(
         text: "Войти",
         bgColor: .clear,
         size: Constants.Sizing.text18,
         weight: .medium,
-        color: .black
+        titleColor: .black
     )
-    private let errorLabel = MakeView.shared.makeLabel(
+    private lazy var errorLabel = MakeView.shared.makeLabel(
         text: "",
         bgColor: .clear,
         size: Constants.Sizing.text16,
         weight: .regular,
         color: .red
     )
+    private lazy var eyeSecuryPassTFButton = MakeView.shared.makeButton(
+        titleColor: .gray,
+        image: UIImage(systemName: "eye.slash.fill")
+    )
+    private lazy var eyeSecuryConfirmTFButton = MakeView.shared.makeButton(
+        titleColor: .gray,
+        image: UIImage(systemName: "eye.slash.fill")
+    )
     
-    private  let auth = AuthorizationViewModel()
+    private let authorizationViewModel = AuthorizationViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addView()
         addConstraints()
+    }
+    
+    @objc private func eyeSecuryPassTFButtonTapped(sender: UIButton ) {
+        passwordTextField.changeSecuryPassword(sender)
+    }
+    
+    @objc private func eyeSecuryConfirmTFButtonTapped(sender: UIButton ) {
+        confirmTextField.changeSecuryPassword(sender)
     }
     
     private func addView() {
@@ -104,9 +121,19 @@ class SignUpViewController: UIViewController {
         authView.addSubview(signUpButton)
         authView.addSubview(emailTextField)
         authView.addSubview(passwordTextField)
+        passwordTextField.addSubview(eyeSecuryPassTFButton)
+        eyeSecuryPassTFButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-10)
+        }
         authView.addSubview(passwordLabel)
         authView.addSubview(confirmdLabel)
         authView.addSubview(confirmTextField)
+        confirmTextField.addSubview(eyeSecuryConfirmTFButton)
+        eyeSecuryConfirmTFButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-10)
+        }
         authView.addSubview(errorLabel)
         authView.addSubview(signInButton)
         signUpButton.addTarget(
@@ -119,6 +146,16 @@ class SignUpViewController: UIViewController {
             action: #selector(signInButtonTapped),
             for: .touchUpInside
         )
+        eyeSecuryPassTFButton.addTarget(
+            self,
+            action: #selector(eyeSecuryPassTFButtonTapped),
+            for: .touchUpInside
+        )
+        eyeSecuryConfirmTFButton.addTarget(
+            self,
+            action: #selector(eyeSecuryConfirmTFButtonTapped),
+            for: .touchUpInside
+        )
     }
     
     @objc private func signUpButtonTapped(sender: UIButton) {
@@ -127,16 +164,16 @@ class SignUpViewController: UIViewController {
               let confirm = confirmTextField.text else {
             return
         }
-        let result = auth.checkSignInEndSignUp(
+        let result = authorizationViewModel.checkSignInEndSignUp(
             email: email,
             password: password,
             confirm: confirm
         )
-        errorLabel.text = auth.workErrors(error: result)
+        errorLabel.text = authorizationViewModel.workErrors(error: result)
         guard errorLabel.text == "" else {
             return
         }
-        auth.signUpEmail(email: email, password: password) { [weak self]result in
+        authorizationViewModel.signUpEmail(email: email, password: password) { [weak self]result in
             guard let self = self else {
                 return
             }

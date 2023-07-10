@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520B449A2A5B0F06006F52F9 /* AddCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B44992A5B0F06006F52F9 /* AddCharacterView.swift */; };
+		520B449C2A5BBC95006F52F9 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B449B2A5BBC95006F52F9 /* CustomView.swift */; };
+		520B449E2A5BC13D006F52F9 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B449D2A5BC13D006F52F9 /* CustomViewController.swift */; };
+		520B44A12A5BCDDF006F52F9 /* CharacterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B44A02A5BCDDF006F52F9 /* CharacterInfoView.swift */; };
 		523975F72A52E03000013825 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975F62A52E03000013825 /* AuthorizationViewModel.swift */; };
 		523975FA2A52E04900013825 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975F92A52E04900013825 /* AuthorizationViewController.swift */; };
 		523975FC2A53109300013825 /* PhoneAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975FB2A53109300013825 /* PhoneAuthorizationViewController.swift */; };
@@ -45,6 +49,10 @@
 /* Begin PBXFileReference section */
 		16EBA9D7718976E5CFA138A9 /* Pods-IOS-GEEKS-HomeWork1-M5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-GEEKS-HomeWork1-M5.release.xcconfig"; path = "Target Support Files/Pods-IOS-GEEKS-HomeWork1-M5/Pods-IOS-GEEKS-HomeWork1-M5.release.xcconfig"; sourceTree = "<group>"; };
 		4D94B2AF25BD0FFD24B34D1A /* Pods_IOS_GEEKS_HomeWork1_M5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_GEEKS_HomeWork1_M5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		520B44992A5B0F06006F52F9 /* AddCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharacterView.swift; sourceTree = "<group>"; };
+		520B449B2A5BBC95006F52F9 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		520B449D2A5BC13D006F52F9 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		520B44A02A5BCDDF006F52F9 /* CharacterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoView.swift; sourceTree = "<group>"; };
 		523975F62A52E03000013825 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		523975F92A52E04900013825 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		523975FB2A53109300013825 /* PhoneAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520B449F2A5BCDB4006F52F9 /* CharacterInfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				520B44A02A5BCDDF006F52F9 /* CharacterInfoView.swift */,
+				52E6D2D82A418029004CF566 /* CharacterInfoViewController.swift */,
+			);
+			path = CharacterInfoScreen;
+			sourceTree = "<group>";
+		};
 		523975F52A52E00100013825 /* AuthorizationWorkflow */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,12 +149,13 @@
 			path = FirestoreManager;
 			sourceTree = "<group>";
 		};
-		523976132A57D01E00013825 /* AddProduct */ = {
+		523976132A57D01E00013825 /* AddCharacter */ = {
 			isa = PBXGroup;
 			children = (
+				520B44992A5B0F06006F52F9 /* AddCharacterView.swift */,
 				523976112A570CF700013825 /* AddCharacterViewController.swift */,
 			);
-			path = AddProduct;
+			path = AddCharacter;
 			sourceTree = "<group>";
 		};
 		523976142A57E71400013825 /* NewTextfield */ = {
@@ -153,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				52E6D2D52A40D204004CF566 /* CustomCharacterTableCell */,
+				520B449B2A5BBC95006F52F9 /* CustomView.swift */,
+				520B449D2A5BC13D006F52F9 /* CustomViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,8 +182,8 @@
 			children = (
 				52E6D2A52A3DDDEB004CF566 /* RickAndMortyViewController.swift */,
 				523B40522A4AAA5100585929 /* RickAndMortyViewModel.swift */,
-				52E6D2D82A418029004CF566 /* CharacterInfoViewController.swift */,
 				5239760D2A56EA8400013825 /* RickAndMortyUtility.swift */,
+				520B449F2A5BCDB4006F52F9 /* CharacterInfoScreen */,
 			);
 			path = CharacterWorkflow;
 			sourceTree = "<group>";
@@ -275,7 +295,7 @@
 				5239760F2A570C8D00013825 /* MainTabBarViewController.swift */,
 				523975F52A52E00100013825 /* AuthorizationWorkflow */,
 				523B40512A4AA9D600585929 /* CharacterWorkflow */,
-				523976132A57D01E00013825 /* AddProduct */,
+				523976132A57D01E00013825 /* AddCharacter */,
 			);
 			path = Workflow;
 			sourceTree = "<group>";
@@ -467,8 +487,10 @@
 				52BB4C262A58057A00F293DD /* NewTextField + Extention.swift in Sources */,
 				52C65DCC2A4CBD440038FD60 /* UserDefaultStorage.swift in Sources */,
 				52C65DDE2A5132230038FD60 /* SplashViewController.swift in Sources */,
+				520B44A12A5BCDDF006F52F9 /* CharacterInfoView.swift in Sources */,
 				523975FA2A52E04900013825 /* AuthorizationViewController.swift in Sources */,
 				523976022A5416C700013825 /* EmailAuthorizationService.swift in Sources */,
+				520B449E2A5BC13D006F52F9 /* CustomViewController.swift in Sources */,
 				52C65DE12A5134780038FD60 /* PhoneNumberAuthorizationService.swift in Sources */,
 				523975FC2A53109300013825 /* PhoneAuthorizationViewController.swift in Sources */,
 				523B40532A4AAA5100585929 /* RickAndMortyViewModel.swift in Sources */,
@@ -476,8 +498,10 @@
 				523975FE2A5310AA00013825 /* SignUpViewController.swift in Sources */,
 				52E6D2D12A40C449004CF566 /* Character.swift in Sources */,
 				523976162A57E73C00013825 /* NewTextfield.swift in Sources */,
+				520B449C2A5BBC95006F52F9 /* CustomView.swift in Sources */,
 				52E6D2CE2A408C45004CF566 /* NetworkService.swift in Sources */,
 				5239760E2A56EA8400013825 /* RickAndMortyUtility.swift in Sources */,
+				520B449A2A5B0F06006F52F9 /* AddCharacterView.swift in Sources */,
 				523976002A53211100013825 /* SMSCodeViewController.swift in Sources */,
 				52E6D2D92A418029004CF566 /* CharacterInfoViewController.swift in Sources */,
 				52E6D2A42A3DDDEB004CF566 /* SceneDelegate.swift in Sources */,

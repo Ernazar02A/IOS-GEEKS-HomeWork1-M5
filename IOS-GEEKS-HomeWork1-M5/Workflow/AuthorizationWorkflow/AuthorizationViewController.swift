@@ -9,11 +9,10 @@ import UIKit
 
 class AuthorizationViewController: UIViewController {
     
-    private let backgroundImage: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "AuthbgImage")
-        return view
-    }()
+    private let backgroundImage: UIImageView = MakeView.shared.makeImage(
+        type: .named,
+        image: "AuthbgImage"
+    )
     private let authView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white.withAlphaComponent(0.7)
@@ -45,6 +44,7 @@ class AuthorizationViewController: UIViewController {
         
         addView()
         addConstraints()
+        addTargetForButton()
     }
     
     private func addView() {
@@ -52,12 +52,15 @@ class AuthorizationViewController: UIViewController {
         view.addSubview(authView)
         authView.addSubview(chooseLabel)
         authView.addSubview(phoneButton)
+        authView.addSubview(emailButton)
+    }
+    
+    private func addTargetForButton() {
         phoneButton.addTarget(
             self,
             action: #selector(phoneButtonTapped),
             for: .touchUpInside
         )
-        authView.addSubview(emailButton)
         emailButton.addTarget(
             self,
             action: #selector(emailButtonTapped),

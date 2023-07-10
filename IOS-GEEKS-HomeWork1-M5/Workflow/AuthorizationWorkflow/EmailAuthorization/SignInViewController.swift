@@ -9,11 +9,10 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
-    private let backgroundImage: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "AuthbgImage")
-        return view
-    }()
+    private let backgroundImage: UIImageView = MakeView.shared.makeImage(
+        type: .named,
+        image: "AuthbgImage"
+    )
     private let authView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white.withAlphaComponent(0.7)
@@ -55,14 +54,14 @@ class SignInViewController: UIViewController {
         cornerRadius: Constants.Sizing.corner10,
         size: Constants.Sizing.text25,
         weight: .medium,
-        color: .white
+        titleColor: .white
     )
     private let signUpButton = MakeView.shared.makeButton(
         text: "Регистрация",
         bgColor: .clear,
         size: Constants.Sizing.text18,
         weight: .medium,
-        color: .black
+        titleColor: .black
     )
     private let errorLabel = MakeView.shared.makeLabel(
         text: "",
