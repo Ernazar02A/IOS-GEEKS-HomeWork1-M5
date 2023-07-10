@@ -23,7 +23,10 @@ class MakeView {
         let label = UILabel()
         label.textAlignment = alignment
         label.text = text
-        label.font = .systemFont(ofSize: size, weight: weight )
+        label.font = .systemFont(
+            ofSize: size,
+            weight: weight
+        )
         label.textColor = color
         label.layer.cornerRadius = cornerRadius
         label.backgroundColor = bgColor
@@ -37,7 +40,8 @@ class MakeView {
         bgColor: UIColor = .white,
         text: String = "",
         borderWidth: CGFloat = 0,
-        borderColor: CGColor = UIColor.black.cgColor
+        borderColor: CGColor = UIColor.black.cgColor,
+        securyText: Bool = false
     ) -> UpdateTextField {
         let textField = UpdateTextField()
         textField.text = text
@@ -46,6 +50,7 @@ class MakeView {
         textField.layer.cornerRadius = cornerRadius
         textField.placeholder = placeholder
         textField.backgroundColor = bgColor
+        textField.isSecureTextEntry = securyText
         return textField
     }
     
@@ -55,16 +60,52 @@ class MakeView {
         cornerRadius: CGFloat = 0,
         size: CGFloat = 16,
         weight: UIFont.Weight = .regular,
-        color: UIColor = .black,
+        titleColor: UIColor = .black,
+        tintColor: UIColor = .gray,
         image: UIImage? = UIImage(named: "")        
     ) -> UIButton {
         let button = UIButton()
-        button.setTitle(text, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: size, weight: weight)
-        button.setTitleColor(color, for: .normal)
+        button.setTitle(
+            text,
+            for: .normal
+        )
+        button.titleLabel?.font = .systemFont(
+            ofSize: size,
+            weight: weight
+        )
+        button.setTitleColor(
+            titleColor,
+            for: .normal
+        )
         button.layer.cornerRadius = cornerRadius
+        button.tintColor = tintColor
         button.backgroundColor = bgColor
-        button.setImage(image ?? UIImage(), for: .normal)
+        button.setImage(
+            image ?? UIImage(),
+            for: .normal
+        )
         return button
+    }
+    
+    enum ImageType {
+        case system
+        case named
+    }
+    
+    func makeImage(
+        type: ImageType,
+        image: String,
+        cornerRadius: CGFloat = 0
+    ) -> UIImageView {
+        let imageView = UIImageView()
+        switch type {
+        case .named:
+            imageView.image = UIImage(named: image)
+        case .system:
+            imageView.image = UIImage(systemName: image)
+        }
+        imageView.layer.cornerRadius = cornerRadius
+        imageView.clipsToBounds = true
+        return imageView
     }
 }
