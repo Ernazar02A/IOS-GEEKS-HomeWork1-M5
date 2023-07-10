@@ -21,7 +21,7 @@ class CharacterInfoViewController: UIViewController {
         view.layer.cornerRadius = Constants.Sizing.corner20
         view.clipsToBounds = true
         return view
-    }()
+    }()  
     private lazy var viewForImage: UIView = {
         let view = UIView()
         view.backgroundColor = .white
