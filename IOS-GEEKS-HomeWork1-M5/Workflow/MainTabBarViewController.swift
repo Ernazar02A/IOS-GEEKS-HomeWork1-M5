@@ -12,18 +12,18 @@ class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let vc1 = UINavigationController(rootViewController: RickAndMortyViewController())
-        let vc2 = UINavigationController(rootViewController: AddCharacterViewController())
+        let firstTabVC = UINavigationController(rootViewController: RickAndMortyViewController())
+        let secondTabVC = UINavigationController(rootViewController: AddCharacterViewController())
         
-        vc1.tabBarItem.image = UIImage(systemName: "person")
-        vc2.tabBarItem.image = UIImage(systemName: "person.crop.rectangle.badge.plus")
+        firstTabVC.tabBarItem.image = UIImage(systemName: "person")
+        secondTabVC.tabBarItem.image = UIImage(systemName: "person.crop.rectangle.badge.plus")
         
-        vc1.title = "character"
-        vc2.title = "Add Product"
+        firstTabVC.title = "character"
+        secondTabVC.title = "Add Product"
         
         tabBar.tintColor = .label
         tabBar.backgroundColor = .white
         
-        setViewControllers([vc1,vc2], animated: true)
+        setViewControllers([firstTabVC,secondTabVC], animated: true)
     }
 }
