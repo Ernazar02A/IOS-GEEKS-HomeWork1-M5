@@ -32,6 +32,7 @@ class RickAndMortyViewController: UIViewController {
 
     private let rickAndMortyViewModel = RickAndMortyViewModel()
     private var characters: [Character] = []
+    private var charactersCoreData: [Character] = []
     
     let refreshControl: UIRefreshControl = {
         let view = UIRefreshControl()
@@ -46,7 +47,7 @@ class RickAndMortyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(characters)
         setup()
         fetchCharacters()
         
@@ -54,7 +55,7 @@ class RickAndMortyViewController: UIViewController {
     }
 
     @objc func refresh(_ sender: UIRefreshControl) {
-        refreshControl.endRefreshing()
+        charactersCoreData = []
         fetchCharacters()
     }
     
@@ -66,8 +67,10 @@ class RickAndMortyViewController: UIViewController {
     private func fetchCharacters() {
         Task {
             do {
-                characters = try await rickAndMortyViewModel.fetchCharacters()
+                charactersCoreData = try await rickAndMortyViewModel.fetchCharacters()
+                refreshControl.endRefreshing()
                 fetchCharactersFirestore()
+                fetchCharactersCoreData()
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -77,13 +80,21 @@ class RickAndMortyViewController: UIViewController {
         }
     }
     
+    private func fetchCharactersCoreData() {
+        let data = DataManager.shared.characters()
+        charactersCoreData.append(contentsOf: RickAndMortyUtility.mapCoreData(data: data))
+    }
+    
     private func fetchCharactersFirestore() {
         FirestoreManager.shared.readData(with: .character) { result in
             switch result {
             case .success(let model):
                 let characters = RickAndMortyUtility.mapData(data: model)
-                self.characters.append(contentsOf: characters)
-                self.collectionView.reloadData()
+                self.charactersCoreData.append(contentsOf: characters)
+                self.characters = self.charactersCoreData
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             case .failure(let error):
                 print(error)
             }

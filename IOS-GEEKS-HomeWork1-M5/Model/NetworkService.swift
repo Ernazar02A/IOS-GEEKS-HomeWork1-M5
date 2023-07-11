@@ -23,6 +23,6 @@ struct NetworkService {
                 .appendingPathComponent("character")
         )
         let (data, _) = try await URLSession.shared.data(for: request)
-        return try JSONDecoder().decode(Characters.self, from: data).results
+        return try JSONDecoder().decode(CharactersModel.self, from: data).results
     }
 }

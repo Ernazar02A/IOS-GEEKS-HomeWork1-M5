@@ -38,4 +38,23 @@ enum RickAndMortyUtility {
             "image": character.image
         ]
     }
+    
+    static func mapCoreData(data: [Characters]) -> [Character] {
+        data.map {
+            let name = $0.name!
+            let status = $0.status!
+            let species = $0.species!
+            let type = $0.type!
+            let gender = $0.gender!
+            let image = $0.image!
+            return Character(
+                name: name,
+                status: status,
+                species: species,
+                type: type,
+                gender: gender,
+                image: image
+            )
+        }
+    }
 }

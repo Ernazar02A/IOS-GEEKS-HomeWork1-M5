@@ -16,7 +16,11 @@ class RickAndMortyViewModel {
     }
     
     func addNewCharachter(character: Character) {
-        let character = RickAndMortyUtility.mapData(character: character)
-        firestoreManager.addData(with: .character, data: character)
+        let characters = RickAndMortyUtility.mapData(character: character)
+        firestoreManager.addData(with: .character, data: characters)
+    }
+    
+    func addCharachterCoreData(character: Character) {
+        DataManager.shared.character(character: character)
     }
 }

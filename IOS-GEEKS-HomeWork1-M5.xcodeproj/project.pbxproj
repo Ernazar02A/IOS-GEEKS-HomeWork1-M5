@@ -11,6 +11,12 @@
 		520B449C2A5BBC95006F52F9 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B449B2A5BBC95006F52F9 /* CustomView.swift */; };
 		520B449E2A5BC13D006F52F9 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B449D2A5BC13D006F52F9 /* CustomViewController.swift */; };
 		520B44A12A5BCDDF006F52F9 /* CharacterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B44A02A5BCDDF006F52F9 /* CharacterInfoView.swift */; };
+		520B44A32A5C11E2006F52F9 /* UpdateCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B44A22A5C11E2006F52F9 /* UpdateCharacterViewController.swift */; };
+		520B44A52A5C1375006F52F9 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B44A42A5C1375006F52F9 /* NetworkMonitor.swift */; };
+		520B44AC2A5C26ED006F52F9 /* CharacterDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 520B44AA2A5C26EC006F52F9 /* CharacterDataModel.xcdatamodeld */; };
+		520B44AE2A5C2824006F52F9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B44AD2A5C2824006F52F9 /* DataManager.swift */; };
+		520B44B92A5C46F4006F52F9 /* Characters+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B44B72A5C46F3006F52F9 /* Characters+CoreDataProperties.swift */; };
+		520B44BA2A5C46F4006F52F9 /* Characters+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B44B82A5C46F4006F52F9 /* Characters+CoreDataClass.swift */; };
 		523975F72A52E03000013825 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975F62A52E03000013825 /* AuthorizationViewModel.swift */; };
 		523975FA2A52E04900013825 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975F92A52E04900013825 /* AuthorizationViewController.swift */; };
 		523975FC2A53109300013825 /* PhoneAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523975FB2A53109300013825 /* PhoneAuthorizationViewController.swift */; };
@@ -53,6 +59,12 @@
 		520B449B2A5BBC95006F52F9 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		520B449D2A5BC13D006F52F9 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		520B44A02A5BCDDF006F52F9 /* CharacterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoView.swift; sourceTree = "<group>"; };
+		520B44A22A5C11E2006F52F9 /* UpdateCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCharacterViewController.swift; sourceTree = "<group>"; };
+		520B44A42A5C1375006F52F9 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		520B44AB2A5C26EC006F52F9 /* CharacterDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CharacterDataModel.xcdatamodel; sourceTree = "<group>"; };
+		520B44AD2A5C2824006F52F9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		520B44B72A5C46F3006F52F9 /* Characters+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Characters+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		520B44B82A5C46F4006F52F9 /* Characters+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Characters+CoreDataClass.swift"; sourceTree = "<group>"; };
 		523975F62A52E03000013825 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		523975F92A52E04900013825 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		523975FB2A53109300013825 /* PhoneAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +124,15 @@
 			path = CharacterInfoScreen;
 			sourceTree = "<group>";
 		};
+		520B44A92A5C2444006F52F9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				520B44AA2A5C26EC006F52F9 /* CharacterDataModel.xcdatamodeld */,
+				520B44AD2A5C2824006F52F9 /* DataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		523975F52A52E00100013825 /* AuthorizationWorkflow */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +175,7 @@
 			children = (
 				520B44992A5B0F06006F52F9 /* AddCharacterView.swift */,
 				523976112A570CF700013825 /* AddCharacterViewController.swift */,
+				520B44A22A5C11E2006F52F9 /* UpdateCharacterViewController.swift */,
 			);
 			path = AddCharacter;
 			sourceTree = "<group>";
@@ -199,6 +221,7 @@
 		52C65DCD2A4D7D580038FD60 /* dataStorageService */ = {
 			isa = PBXGroup;
 			children = (
+				520B44A92A5C2444006F52F9 /* CoreData */,
 				52C65DCE2A4D7D660038FD60 /* KeychainStorage */,
 				52C65DCA2A4CBD0F0038FD60 /* UserDefaultStorage */,
 			);
@@ -234,6 +257,8 @@
 		52E6D2952A3DDDEA004CF566 = {
 			isa = PBXGroup;
 			children = (
+				520B44B82A5C46F4006F52F9 /* Characters+CoreDataClass.swift */,
+				520B44B72A5C46F3006F52F9 /* Characters+CoreDataProperties.swift */,
 				52E6D2A02A3DDDEB004CF566 /* IOS-GEEKS-HomeWork1-M5 */,
 				52E6D29F2A3DDDEB004CF566 /* Products */,
 				95B01C783D83DC48B22560A5 /* Pods */,
@@ -284,6 +309,7 @@
 				52E6D2D22A40C46E004CF566 /* Constants */,
 				52E6D2CF2A40C431004CF566 /* DTOs */,
 				52E6D2CD2A408C45004CF566 /* NetworkService.swift */,
+				520B44A42A5C1375006F52F9 /* NetworkMonitor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -475,13 +501,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E6D2A62A3DDDEB004CF566 /* RickAndMortyViewController.swift in Sources */,
+				520B44A32A5C11E2006F52F9 /* UpdateCharacterViewController.swift in Sources */,
 				52E6D2DB2A41BB61004CF566 /* String + Extention.swift in Sources */,
 				52E6D2A22A3DDDEB004CF566 /* AppDelegate.swift in Sources */,
 				523976122A570CF700013825 /* AddCharacterViewController.swift in Sources */,
 				52C65DDA2A4EEF380038FD60 /* MakeView.swift in Sources */,
 				523976092A56A77F00013825 /* BaseAuthService.swift in Sources */,
 				523976072A55543600013825 /* SignInViewController.swift in Sources */,
+				520B44BA2A5C46F4006F52F9 /* Characters+CoreDataClass.swift in Sources */,
 				523975F72A52E03000013825 /* AuthorizationViewModel.swift in Sources */,
+				520B44B92A5C46F4006F52F9 /* Characters+CoreDataProperties.swift in Sources */,
 				523976102A570C8D00013825 /* MainTabBarViewController.swift in Sources */,
 				5239760C2A56AF7D00013825 /* FirestoreManager.swift in Sources */,
 				52BB4C262A58057A00F293DD /* NewTextField + Extention.swift in Sources */,
@@ -496,10 +525,13 @@
 				523B40532A4AAA5100585929 /* RickAndMortyViewModel.swift in Sources */,
 				52C65DD12A4D7E0F0038FD60 /* KeychainStorage.swift in Sources */,
 				523975FE2A5310AA00013825 /* SignUpViewController.swift in Sources */,
+				520B44AC2A5C26ED006F52F9 /* CharacterDataModel.xcdatamodeld in Sources */,
 				52E6D2D12A40C449004CF566 /* Character.swift in Sources */,
+				520B44AE2A5C2824006F52F9 /* DataManager.swift in Sources */,
 				523976162A57E73C00013825 /* NewTextfield.swift in Sources */,
 				520B449C2A5BBC95006F52F9 /* CustomView.swift in Sources */,
 				52E6D2CE2A408C45004CF566 /* NetworkService.swift in Sources */,
+				520B44A52A5C1375006F52F9 /* NetworkMonitor.swift in Sources */,
 				5239760E2A56EA8400013825 /* RickAndMortyUtility.swift in Sources */,
 				520B449A2A5B0F06006F52F9 /* AddCharacterView.swift in Sources */,
 				523976002A53211100013825 /* SMSCodeViewController.swift in Sources */,
@@ -722,6 +754,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		520B44AA2A5C26EC006F52F9 /* CharacterDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				520B44AB2A5C26EC006F52F9 /* CharacterDataModel.xcdatamodel */,
+			);
+			currentVersion = 520B44AB2A5C26EC006F52F9 /* CharacterDataModel.xcdatamodel */;
+			path = CharacterDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 52E6D2962A3DDDEA004CF566 /* Project object */;
 }
